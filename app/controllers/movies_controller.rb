@@ -18,8 +18,9 @@ class MoviesController < ApplicationController
 
     if @movie.save
       # ADD MOVIE HERE
-      flash[:notice] = 'Movie was successfully created'
       redirect_to root_path
+      flash[:notice] = 'Movie was successfully created'
+
     else
       flash[:notice] = 'There was an error'
       render 'new'

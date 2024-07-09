@@ -8,5 +8,13 @@
     </tr>
   </thead>
   <tbody>
+  <% @movies.each do |movie| %>
+    <tr>
+      <td><%= "#{movie.title} by #{movie.director} (#{movie.release_year})" %></td>
+      <td><%= "genres - #{movie.genres}" %></td>
+      <td><%= "Views #{movie.view_count}" %></td>
+    </tr>
+  <% end %>
+</tbody>
    
 </table>
