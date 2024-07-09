@@ -14,10 +14,8 @@ class MoviesController < ApplicationController
   def edit; end
 
   def update
-    if @movie.update(movie_params)
-      @movie.view_count += 1
-      @movie.save
-      flash[:notice] = 'movie was created successfully.'
+    if @movie.update(update_movie_params)
+      flash[:notice] = 'movie was updated successfully.'
       redirect_to root_path
     else
       render 'edit'
@@ -42,6 +40,10 @@ end
 
 def movie_params
   params.require(:movie).permit(:title, :director, :release_year, :genres)
+end
+
+def update_movie_params
+  params.require(:movie).permit(:title, :director, :release_year, :genres, :view_count)
 end
 
 def set_movie
