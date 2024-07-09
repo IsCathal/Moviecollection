@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
   end
 
   def new
-    @movie = Movie.all
+    @movie = Movie.new
   end
 
   def edit; end
@@ -28,5 +28,5 @@ class MoviesController < ApplicationController
 end
 
 def movie_params
-  params.require(:movie).permit(:title, :director, :release_year, :genres)
+  params.require(:movie).permit(:title, :director)
 end

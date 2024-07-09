@@ -1,1 +1,18 @@
-<h1>Add a Movie!</h1>
+<h1>Hi</h1>
+
+<%= form_with(model: @movie, local: true, data: { turbo: false }) do |f| %>
+  <p>
+    <%= f.label :title, "Enter a title" %><br/>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+  <%= f.label :director, "Enter a director" %><br/>
+  <%= f.text_field :director %>
+</p>
+
+
+  <p>
+  <%= f.submit %>
+</p>
+<% end %>
