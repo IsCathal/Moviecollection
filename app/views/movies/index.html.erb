@@ -5,6 +5,8 @@
       <th>Moive</th>
       <th>Genres</th>
       <th>Views</th>
+      <th>Edit</th>
+
     </tr>
   </thead>
   <tbody>
@@ -13,6 +15,7 @@
       <td><%= "#{movie.title} by #{movie.director} (#{movie.release_year})" %></td>
       <td><%= "genres - #{movie.genres}" %></td>
       <td><%= "Views #{movie.view_count}" %></td>
+      <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
     </tr>
   <% end %>
 </tbody>
