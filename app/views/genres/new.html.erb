@@ -1,0 +1,14 @@
+<h1>Hi</h1>
+
+
+<%= form_with(model: @genre, local: true, data: { turbo: false }) do |f| %>
+  <p>
+    <%= f.label :name, "Enter a genre" %><br/>
+    <%= f.text_field :name %>
+  </p>
+
+
+  <p>
+  <%= f.submit %>
+</p>
+<% end %>
