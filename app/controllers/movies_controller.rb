@@ -11,9 +11,7 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end
 
-  def edit
-    @movie = Movie.new
-  end
+  def edit; end
 
   def update; end
 
