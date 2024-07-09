@@ -1,4 +1,13 @@
 <h1>Hi</h1>
+<% if @movie.errors.any? %>
+  <h2>You got an error</h2>
+  <ul>
+    <% @movie.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 
 <%= form_with(model: @movie, local: true, data: { turbo: false }) do |f| %>
   <p>
