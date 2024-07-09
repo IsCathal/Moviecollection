@@ -13,14 +13,22 @@ class MoviesController < ApplicationController
 
   def edit; end
 
-  def update; end
+  def update
+    if @movie.update(movie_params)
+      @movie.view_count += 1
+      @movie.save
+      flash[:notice] = 'movie was created successfully.'
+      redirect_to root_path
+    else
+      render 'edit'
+
+    end
+  end
 
   def create
     @movie = Movie.new(movie_params)
 
     if @movie.save
-      # ADD MOVIE HERE
-      byebug
       flash[:notice] = 'Movie was successfully created'
       redirect_to root_path
       flash[:notice] = 'Movie was successfully created'
