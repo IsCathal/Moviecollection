@@ -1,4 +1,7 @@
 class Movie < ApplicationRecord
+  has_many :movie_genres
+  has_many :genres, through: :movie_genres
+
   validates :title, presence: true,
                     length: { minimum: 3, maximum: 50 }
 
