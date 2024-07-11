@@ -8,6 +8,8 @@ class MoviesController < ApplicationController
   end
 
   def new
+    @genres = Genre.all
+
     @movie = Movie.new
   end
 

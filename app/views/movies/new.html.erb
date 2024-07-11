@@ -25,11 +25,10 @@
 <%= f.text_field :release_year %>
 </p>
 
-<p>
-<%= f.label :genres, "Enter a genres" %><br/>
-<%= f.text_field :genres %>
-</p>
 
+
+
+<%= f.collection_radio_buttons(:genre_id, Genre.order(:name), :id, :name) %>
 
   <p>
   <%= f.submit %>
