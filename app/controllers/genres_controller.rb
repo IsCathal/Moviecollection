@@ -7,11 +7,9 @@ class GenresController < ApplicationController
 
   def create
     @genre = Genre.new(genre_params)
-
     if @genre.save
-      flash[:notice] = 'Movie was successfully created'
+      flash[:notice] = 'Genre was successfully created'
       redirect_to root_path
-      flash[:notice] = 'Movie was successfully created'
 
     else
       flash[:notice] = 'There was an error'
@@ -22,6 +20,6 @@ class GenresController < ApplicationController
   def index; end
 
   def genre_params
-    params.require(:genre).permit(:name)
+    params.require(:genres).permit(:name)
   end
 end
