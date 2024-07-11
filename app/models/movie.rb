@@ -27,4 +27,13 @@ class Movie < ApplicationRecord
       "Views #{view_count}"
     end
   end
+
+  def display_genres(temp_movie)
+    temp = []
+
+    temp_movie.genres.each do |genre|
+      temp << genre.name
+    end
+    temp
+  end
 end

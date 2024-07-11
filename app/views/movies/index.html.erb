@@ -13,7 +13,7 @@
   <% @movies.each do |movie| %>
     <tr>
       <td><%= "#{movie.title} by #{movie.director} (#{movie.release_year})" %></td>
-      <td><%= "genres - #{movie.genres}" %></td>
+      <td><%= "genres - #{movie.display_genres(movie)}" %></td>
       <td><%= "#{movie.display_views_and_most_viewed}" %></td>
       <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
     </tr>
