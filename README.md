@@ -2,7 +2,7 @@
 
 ## ER Diagram
 
-![image](https://github.com/IsCathal/Carsaleslog/assets/52865729/501a8375-6540-4820-9ed0-253403e3d261)
+![image](https://github.com/user-attachments/assets/2a5492b2-ea9d-4ea5-b4fd-fdd76934659c)
 
 ## Prerequisites
 
@@ -51,6 +51,4 @@ Open your web browser and navigate to http://localhost:3000 to see the applicati
 bundle exec rspec
 to run tests
 
-##  Video of create item action
-[![Watch the video](https://github.com/IsCathal/Basicitemcollection/assets/52865729/2dee4e1c-f94b-4fc8-9a54-0c38f05108b9)](https://drive.google.com/file/d/1w1dQugWre1Lb6tU_2GmFum5ABrdhidlQ/view?usp=sharing)
-```
+
