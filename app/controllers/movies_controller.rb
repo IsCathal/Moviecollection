@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
 
   def update
     if @movie.update(update_movie_params)
-      flash[:notice] = 'movie was updated successfully.'
+      flash[:notice] = "Movie '#{@movie.title}' views updated successfully!"
       redirect_to root_path
     else
       render 'edit'
