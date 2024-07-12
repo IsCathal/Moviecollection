@@ -48,7 +48,7 @@ rails server
 Access the application
 Open your web browser and navigate to http://localhost:3000 to see the application running.
 
-rails test
+bundle exec rspec
 to run tests
 
 ##  Video of create item action
