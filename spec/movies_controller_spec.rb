@@ -1,11 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe MoviesController, type: :controller do
+  let!(:genre) { Genre.create!(name: 'Sci-Fi') }
+
   let(:valid_attributes) do
     {
       title: 'Willy Wonka & the Chocolate Factory',
       director: 'Mel Stuart',
-      release_year: 1971
+      release_year: 1971,
+      genre_ids: [genre.id]
     }
   end
 

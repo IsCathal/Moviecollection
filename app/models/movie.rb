@@ -10,6 +10,8 @@ class Movie < ApplicationRecord
 
   validates :release_year, presence: true
 
+  validates :genre_ids, presence: true
+
   def highest_count_of_views
     movies = Movie.all
 

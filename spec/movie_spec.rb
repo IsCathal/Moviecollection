@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe Movie, type: :model do
   describe 'validations' do
     it 'is valid with valid attributes' do
-      movie = Movie.new(title: 'Willy Wonka & the Chocolate Factory', director: 'Mel Stuart', release_year: 1971)
+      genre = Genre.create(name: 'Actions')
+      movie = Movie.new(title: 'Willy Wonka & the Chocolate Factory', director: 'Mel Stuart', release_year: 1971,
+                        genre_ids: [genre.id])
       expect(movie).to be_valid
     end
 
@@ -14,9 +16,12 @@ RSpec.describe Movie, type: :model do
   end
 
   before(:each) do
+    @genre1 = Genre.create(name: 'comedy')
+
     @movie1 = Movie.create(title: 'Willy Wonka & the Chocolate Factory', director: 'Mel Stuart', release_year: 1971,
-                           view_count: 500)
-    @movie2 = Movie.create(title: 'The Terminator', director: 'James Cameron', release_year: 1985, view_count: 200)
+                           genre_ids: [@genre1.id], view_count: 500)
+    @movie2 = Movie.create(title: 'The Terminator', director: 'James Cameron', release_year: 1985,
+                           genre_ids: [@genre1.id], view_count: 200)
   end
 
   describe '#display_views_and_most_viewed' do
