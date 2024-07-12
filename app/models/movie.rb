@@ -32,7 +32,7 @@ class Movie < ApplicationRecord
     temp_movie.genres.each do |genre|
       temp << genre.name
     end
-    temp
+    temp.join(', ')
   end
 
   def display_movie_director_realse_year(movie)
