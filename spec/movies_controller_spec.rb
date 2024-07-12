@@ -37,5 +37,49 @@ RSpec.describe MoviesController, type: :controller do
         expect(flash[:notice]).to eq('There was an error')
       end
     end
+
+    describe 'GET #index' do
+      it 'returns a success response' do
+        Movie.create! valid_attributes
+        get :index
+        expect(response).to be_successful
+      end
+    end
+
+    describe 'GET #new' do
+      it 'returns a success response' do
+        get :new
+        expect(response).to be_successful
+      end
+      it 'assigns a new movie to @movie' do
+        get :new
+        expect(assigns(:movie)).to be_a_new(Movie)
+      end
+    end
+
+    describe 'PATCH/PUT #update' do
+      let(:movie) { Movie.create! valid_attributes }
+
+      context 'with valid parameters' do
+        let(:new_attributes) do
+          {
+            view_count: 500
+          }
+        end
+
+        it 'updates the requested movie' do
+          patch :update, params: { id: movie.to_param, movie: new_attributes }
+          movie.reload
+          expect(movie.view_count).to eq(500)
+        end
+
+        it 'redirects to the root path with a notice' do
+          patch :update, params: { id: movie.to_param, movie: new_attributes }
+          movie.reload
+          expect(response).to redirect_to(root_path)
+          expect(flash[:notice]).to eq("Movie 'Willy Wonka & the Chocolate Factory' views updated successfully!")
+        end
+      end
+    end
   end
 end
