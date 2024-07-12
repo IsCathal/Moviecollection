@@ -8,6 +8,8 @@ class Movie < ApplicationRecord
   validates :director, presence: true,
                        length: { minimum: 5, maximum: 300 }
 
+  validates :release_year, presence: true
+
   def highest_count_of_views
     movies = Movie.all
 
