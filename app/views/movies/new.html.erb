@@ -11,26 +11,24 @@
 
 <%= form_with(model: @movie, local: true, data: { turbo: false }) do |f| %>
   <p>
-    <%= f.label :title, "Enter a title" %><br/>
+    <%= f.label :title, "Title" %><br/>
     <%= f.text_field :title %>
   </p>
 
   <p>
-  <%= f.label :director, "Enter a director" %><br/>
+  <%= f.label :director, "Director" %><br/>
   <%= f.text_field :director %>
 </p>
 
 <p>
-<%= f.label :release_year, "Enter a release_year" %><br/>
+<%= f.label :release_year, "Release Year" %><br/>
 <%= f.text_field :release_year %>
 </p>
 
-
-
-
+<h6>Genres:</h6>
 <%= f.collection_check_boxes(:genre_ids, Genre.order(:name), :id, :name) %>
 
-  <p>
+<p>
   <%= f.submit %>
 </p>
 <% end %>
