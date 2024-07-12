@@ -34,8 +34,7 @@ bundle install
 Set up the database
 Run the following commands to create and set up the database:
 
-sh
-Copy code
+
 rails db:create
 rails db:migrate
 Running the Application
@@ -43,7 +42,6 @@ Start the Rails server
 Run the following command to start the server:
 
 
-Copy code
 rails server
 Access the application
 Open your web browser and navigate to http://localhost:3000 to see the application running.
