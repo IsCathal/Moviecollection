@@ -33,6 +33,8 @@ class MoviesController < ApplicationController
   end
 end
 
+private
+
 def movie_params
   params.require(:movie).permit(:title, :director, :release_year, genre_ids: [])
 end
