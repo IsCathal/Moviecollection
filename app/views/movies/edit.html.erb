@@ -1,28 +1,11 @@
 <h1>Hi Edit Page</h1>
 
+<h2>You are viewing  <%=  @movie.title %> </h2>
+
 <%= form_with(model: @movie, local: true, data: { turbo: false }) do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title , value: @movie.title %>
-  </p>
-
-  <p>
-    <%= f.label :director %><br>
-    <%= f.text_area :director, value: @movie.director %>
-  </p>
-
-  <p>
-<%= f.label :release_year, "Enter a release_year" %><br/>
-<%= f.text_field :release_year , value: @movie.release_year %>
-</p>
 
 <p>
-<%= f.label :genres, "Enter a genres" %><br/>
-<%= f.text_field :genres , value: @movie.genres %>
-</p>
-
-<p>
-<%= f.label :view_count, "Enter a view_count" %><br/>
+<%= f.label :view_count, "Enter a views" %><br/>
 <%= f.text_field :view_count , value: @movie.view_count %>
 </p>
 

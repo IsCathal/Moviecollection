@@ -45,7 +45,7 @@ def movie_params
 end
 
 def update_movie_params
-  params.require(:movie).permit(:title, :director, :release_year, :genres, :view_count)
+  params.require(:movie).permit(:view_count)
 end
 
 def set_movie
