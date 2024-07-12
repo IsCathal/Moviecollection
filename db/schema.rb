@@ -28,7 +28,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_09_214858) do
     t.string "title"
     t.string "director"
     t.integer "release_year"
-    t.string "genres"
     t.integer "view_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
