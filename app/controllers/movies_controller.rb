@@ -27,8 +27,6 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
-    byebug
-
     if @movie.save
       flash[:notice] = 'Movie was successfully created'
       redirect_to root_path
