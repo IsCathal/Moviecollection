@@ -6,7 +6,6 @@ class MoviesController < ApplicationController
   end
 
   def new
-    @genres = Genre.all
     @movie = Movie.new
   end
 
@@ -24,7 +23,7 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     if @movie.save
-      flash[:notice] = 'Movie was successfully created'
+      flash[:notice] = "Movie '#{@movie.title}' has been added successfully!"
       redirect_to root_path
     else
       flash[:notice] = 'There was an error'
