@@ -34,4 +34,8 @@ class Movie < ApplicationRecord
     end
     temp
   end
+
+  def display_movie_director_realse_year(movie)
+    "#{movie.title} by #{movie.director} (#{movie.release_year})"
+  end
 end

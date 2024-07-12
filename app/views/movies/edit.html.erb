@@ -1,6 +1,4 @@
-<h1>Hi Edit Page</h1>
-
-<h2>You are viewing  <%=  @movie.title %> </h2>
+<h2>You are editing <%=  @movie.display_movie_director_realse_year(@movie) %> </h2>
 
 <%= form_with(model: @movie, local: true, data: { turbo: false }) do |f| %>
 
