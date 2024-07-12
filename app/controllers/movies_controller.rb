@@ -1,15 +1,12 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[edit update]
 
-  def show; end
-
   def index
     @movies = Movie.all
   end
 
   def new
     @genres = Genre.all
-
     @movie = Movie.new
   end
 
@@ -21,7 +18,6 @@ class MoviesController < ApplicationController
       redirect_to root_path
     else
       render 'edit'
-
     end
   end
 
@@ -30,7 +26,6 @@ class MoviesController < ApplicationController
     if @movie.save
       flash[:notice] = 'Movie was successfully created'
       redirect_to root_path
-
     else
       flash[:notice] = 'There was an error'
       render 'new'
