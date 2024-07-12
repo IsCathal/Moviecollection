@@ -1,4 +1,4 @@
-<h1>Hi</h1>
+<h1>Add a Movie</h1>
 <% if @movie.errors.any? %>
   <h2>You got an error</h2>
   <ul>
@@ -28,7 +28,7 @@
 
 
 
-<%= f.collection_radio_buttons(:genre_id, Genre.order(:name), :id, :name) %>
+<%= f.collection_check_boxes(:genre_ids, Genre.order(:name), :id, :name) %>
 
   <p>
   <%= f.submit %>

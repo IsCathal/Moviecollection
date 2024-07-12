@@ -6,7 +6,7 @@ class Movie < ApplicationRecord
                     length: { minimum: 3, maximum: 50 }
 
   validates :director, presence: true,
-                       length: { minimum: 10, maximum: 300 }
+                       length: { minimum: 5, maximum: 300 }
 
   def get_highest_count_of_views
     movies = Movie.all

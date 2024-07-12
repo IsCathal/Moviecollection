@@ -27,11 +27,11 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
+    byebug
 
     if @movie.save
       flash[:notice] = 'Movie was successfully created'
       redirect_to root_path
-      flash[:notice] = 'Movie was successfully created'
 
     else
       flash[:notice] = 'There was an error'
@@ -41,7 +41,7 @@ class MoviesController < ApplicationController
 end
 
 def movie_params
-  params.require(:movie).permit(:title, :director, :release_year, :genres)
+  params.require(:movie).permit(:title, :director, :release_year, genre_ids: [])
 end
 
 def update_movie_params
