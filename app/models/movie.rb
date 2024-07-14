@@ -31,12 +31,12 @@ class Movie < ApplicationRecord
     end
   end
 
-  def display_genres(temp_movie)
-    temp = []
-    temp_movie.genres.each do |genre|
-      temp << genre.name
+  def display_genres(movie)
+    final_arr = []
+    movie.genres.each do |genre|
+      final_arr << genre.name
     end
-    temp.join(', ')
+    final_arr.join(', ')
   end
 
   def display_movie_director_realse_year(movie)
