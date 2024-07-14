@@ -9,17 +9,14 @@ class Movie < ApplicationRecord
                        length: { minimum: 5, maximum: 300 }
 
   validates :release_year, presence: true
-
   validates :genre_ids, presence: true
 
   def highest_count_of_views
     movies = Movie.all
-
     highest_views_number = 0
     movies.each do |movie|
       highest_views_number = movie.view_count if !movie.view_count.nil? && (movie.view_count > highest_views_number)
     end
-
     highest_views_number
   end
 
