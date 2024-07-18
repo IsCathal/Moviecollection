@@ -26,11 +26,11 @@ RSpec.describe Movie, type: :model do
 
   describe '#display_views_and_most_viewed' do
     it 'returns the View Count with Most Watched Added' do
-      expect(@movie1.display_views_and_most_viewed).to eq('Views 500 (Most Watched)')
+      expect(@movie1.most_watched?).to eq(true)
     end
 
     it 'returns the View Count with Most Watched Added' do
-      expect(@movie2.display_views_and_most_viewed).to eq('Views 200')
+      expect(@movie2.most_watched?).to eq(false)
     end
   end
 

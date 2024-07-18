@@ -11,21 +11,8 @@ class Movie < ApplicationRecord
   validates :release_year, presence: true
   validates :genre_ids, presence: true
 
-  def highest_count_of_views
-    movies = Movie.all
-    highest_views_number = 0
-    movies.each do |movie|
-      highest_views_number = movie.view_count if !movie.view_count.nil? && (movie.view_count > highest_views_number)
-    end
-    highest_views_number
-  end
-
-  def display_views_and_most_viewed
-    if view_count == highest_count_of_views && Movie.count > 1 && view_count != 0
-      "Views #{view_count} (Most Watched)"
-    else
-      "Views #{view_count}"
-    end
+  def most_watched?
+    view_count == Movie.maximum(:view_count) && Movie.count > 1 && view_count != 0
   end
 
   def display_genres(movie)

@@ -14,7 +14,7 @@
     <tr>
       <td><%= movie.display_movie_director_realse_year(movie) %></td>
       <td><%= "Genres: #{movie.display_genres(movie)}" %></td>
-      <td><%= "#{movie.display_views_and_most_viewed}" %></td>
+      <td>Views: <%= movie.view_count %> <%= "Most Viewed"  if movie.most_watched? %></td>
       <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
     </tr>
   <% end %>
